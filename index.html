@@ -1,316 +1,343 @@
-<html><head><meta charset="UTF-8"><title>System Design Cases</title></head><body>
-<h3>类似 Dropbox 的文件同步服务</h3>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>System Design Cases</title>
+  <style>
+    /* 加粗标题样式 */
+    h1 {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-top: 1.5em;
+    }
+
+    /* 前面加小黑点（用伪元素） */
+    h1::before {
+      content: "• ";
+      color: black;
+      margin-right: 5px;
+    }
+
+    /* 链接文字样式和正文一致 */
+    p a {
+      font-size: 1em;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<h1>类似 Dropbox 的文件同步服务</h1>
 <p>File sync service like Dropbox
 Keywords: file segmentation, distributed storage, version management, and permission control.（功能型设计）</p>
 <p>关键词：文件分块、分布式存储、版本管理、权限控制。</p>
 <p><a href="https://systemdesignschool.io/problems/dropbox/solution" target="_blank">SystemDesignSchool</a>；<a href="https://synthia-li.github.io/Grok%20Dropbox.htm" target="_blank">Synthia Blog</a>；<a href="https://www.geeksforgeeks.org/design-dropbox-a-system-design-interview-question/" target="_blank">GeeksforGeeks</a>；<a href="https://www.hellointerview.com/learn/system-design/problem-breakdowns/dropbox" target="_blank">HelloInterview</a></p>
-<h3>像 Google 一样的搜索引擎</h3>
+<h1>像 Google 一样的搜索引擎</h1>
 <p>Search engine like Google
 Keywords: web crawling, reverse index, query optimization, ranking algorithm, distributed storage.（功能型设计）</p>
 <p>关键词：网页爬取、反向索引、查询优化、排名算法、分布式存储。</p>
 <p><a href="http://infolab.stanford.edu/pub/papers/google.pdf" target="_blank">Stanford Paper</a>；<a href="https://deepaksood619.github.io/computer-science/interview-question/system-design-google-search/" target="_blank">Github Deepaksood619</a>；<a href="https://jc1175.medium.com/how-i-would-design-a-search-engine-9b423a18afe7" target="_blank">Jc1175</a>；<a href="https://stratoflow.com/how-to-build-a-search-engine/" target="_blank">Stratoflow</a></p>
-<h3>像 Google 一样可扩展的网络爬虫</h3>
+<h1>像 Google 一样可扩展的网络爬虫</h1>
 <p>Scalable web crawler like Google（功能型设计）</p>
 <p><a href="https://www.hellointerview.com/learn/system-design/problem-breakdowns/web-crawler" target="_blank">HelloInterview</a>；<a href="https://synthia-li.github.io/Alex9%20Web%20Crawler.htm" target="_blank">Synthia Blog</a>；<a href="https://www.geeksforgeeks.org/design-web-crawler-system-design/" target="_blank">GeeksforGeeks</a>；<a href="https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design/web_crawler" target="_blank">GitHub</a>；<a href="https://synthia-li.github.io/Grok%20Web%20Crawler.htm" target="_blank">Synthia Blog</a>；<a href="https://jc1175.medium.com/how-i-would-design-a-web-crawler-9013251fa9f3" target="_blank">Jc1175</a>；<a href="https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/web_crawler/README.md" target="_blank">GitHub</a></p>
-<h3>类似 Google Docs 的协作编辑系统</h3>
+<h1>类似 Google Docs 的协作编辑系统</h1>
 <p>Collaborative Editing System like Google Docs
 Keywords: real-time collaboration, conflict resolution algorithm (CRDT/OT), version control, locking mechanism.（功能型设计）</p>
 <p>关键词：实时协作、冲突解决算法(CRDT/OT)版本控、锁机制。</p>
 <p><a href="https://blog.bytebytego.com/p/how-to-design-google-docs-episode" target="_blank">Blog</a>；<a href="https://systemdesignschool.io/problems/google-doc/solution" target="_blank">SystemDesignSchool</a></p>
-<h3>类似 Redis 的键值存储</h3>
+<h1>类似 Redis 的键值存储</h1>
 <p>Key-value store like Redis（架构型设计）</p>
 <p><a href="https://www.slideshare.net/slideshow/introduction-to-redis/8189142" target="_blank">Slideshare</a>；<a href="https://dev.to/dleedev365/design-a-key-value-store-for-system-design-interview-3i4j" target="_blank">Dev</a>；<a href="https://synthia-li.github.io/Alex6%20Key-Value%20Store.htm" target="_blank">Synthia Blog</a>；<a href="https://nikasakana.medium.com/how-to-design-a-distributed-key-value-store-cfd83248541b" target="_blank">Nikasakana</a>；<a href="https://medium.com/@mehar.chand.cloud/design-key-value-store-for-distributed-system-83ff11594b3e" target="_blank">Medium</a></p>
-<h3>
-类似 Memcached 的分布式缓存系统</h3>
+<h1>
+类似 Memcached 的分布式缓存系统</h1>
 <p>Distributed cache system like Memcached（架构型设计）</p>
 <p><a href="https://www.slideshare.net/slideshow/introduction-to-memcached/4296041" target="_blank">Slideshare</a>；<a href="https://charlieinden.github.io/System-Design/2018-06-12_System-Design--Chapter-4--Caching-b59a4cf83f10.html" target="_blank">Charlieinden</a>；<a href="https://www.geeksforgeeks.org/design-distributed-cache-system-design/" target="_blank">GeeksforGeeks</a></p>
-<h3>类似亚马逊的推荐系统</h3>
+<h1>类似亚马逊的推荐系统</h1>
 <p>Recommendation system like Amazon's（功能型设计）</p>
 <p><a href="https://web.archive.org/web/20170406065247/http:/tech.hulu.com/blog/2011/09/19/recommendation-system.html" target="_blank">Web</a>；<a href="https://ijcai13.org/files/tutorial_slides/td3.pdf" target="_blank">ijcai13 tutorial slide</a>；<a href="https://www.fullstack.com/labs/resources/blog/building-a-recommendation-system-using-aws-personalize" target="_blank">Fullstack</a>；<a href="https://caylent.com/blog/building-recommendation-systems-using-genai-and-amazon-personalize" target="_blank">Caylent</a></p>
-<h3>类似Bitly的短链接</h3>
+<h1>类似Bitly的短链接</h1>
 <p>Tinyurl system like Bitly（功能型设计）</p>
 <p><a href="n00tc0d3r.blogspot.com" target="_blank"></a>；<a href="https://synthia-li.github.io/Grok%20URL%20Shortening%20service%20like%20TinyURL.htm" target="_blank">Synthia Blog</a>；<a href="https://medium.com/@sandeep4.verma/system-design-scalable-url-shortener-service-like-tinyurl-106f30f23a82" target="_blank">Medium</a>；<a href="https://www.hellointerview.com/learn/system-design/problem-breakdowns/bitly" target="_blank">HelloInterview</a></p>
-<h3>URL短链接</h3>
+<h1>URL短链接</h1>
 <p>URL Shortener（功能型设计）</p>
 <p><a href="https://blog.algomaster.io/p/design-a-url-shortener" target="_blank">Blog</a>；<a href="https://synthia-li.github.io/Alex8%20URL%20Shortener.htm" target="_blank">Synthia Blog</a>；<a href="https://www.geeksforgeeks.org/system-design-url-shortening-service/" target="_blank">GeeksforGeeks</a></p>
-<h3>类似WhatsApp 的聊天应用程序</h3>
+<h1>类似WhatsApp 的聊天应用程序</h1>
 <p>Chat app like WhatsApp（功能型设计）</p>
 <p><a href="https://highscalability.com/the-whatsapp-architecture-facebook-bought-for-19-billion/" target="_blank">Highscalability</a>；<a href="https://www.hellointerview.com/learn/system-design/problem-breakdowns/whatsapp" target="_blank">HelloInterview</a>；<a href="https://www.geeksforgeeks.org/designing-whatsapp-messenger-system-design/" target="_blank">GeeksforGeeks</a>；<a href="https://blog.algomaster.io/p/design-a-chat-application-like-whatsapp" target="_blank">Blog</a>；<a href="https://www.mindk.com/blog/how-to-create-a-chat-app-like-whatsapp/" target="_blank">Mindk</a>；<a href="https://dev.to/alexsam986/build-chat-apps-like-whatsapp-telegram-slack-2jn2" target="_blank">Dev</a>；<a href="https://ably.com/blog/how-to-build-a-chat-app-like-whatsapp" target="_blank">Ably</a></p>
-<h3>类似 Instagram 的图片共享系统</h3>
+<h1>类似 Instagram 的图片共享系统</h1>
 <p>Picture sharing system like Instagram（功能型设计）</p>
 <p><a href="https://highscalability.com/instagram-architecture-14-million-users-terabytes-of-photos/" target="_blank">Highscalability</a>；<a href="https://medium.com/@lazygeek78/system-design-series-cfa60db16c27" target="_blank">Medium</a>；<a href="https://www.geeksforgeeks.org/design-a-picture-sharing-system-system-design/" target="_blank">GeeksforGeeks</a>；<a href="https://dev.to/zeeshanali0704/design-instagram-2ngm" target="_blank">Dev</a>；<a href="https://www.freecodecamp.org/news/how-to-create-a-photo-sharing-app-like-instagram-the-basics-8dfdeb5e17f5/" target="_blank">Freecodecamp</a></p>
-<h3>Facebook 新闻推送功能</h3>
+<h1>Facebook 新闻推送功能</h1>
 <p>Facebook news feed function（功能型设计）</p>
 <p><a href="https://liuzhenglaichn.gitbook.io/system-design/news-feed/design-a-news-feed-system" target="_blank">Liuzhenglaichn</a>；<a href="https://www.linkedin.com/pulse/designing-newsfeed-system-cloudastra-technologies-hfn4c/" target="_blank">Linkedin</a>；<a href="https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-news-feed" target="_blank">HelloInterview</a>；<a href="slideshare.net" target="_blank"></a>；<a href="https://medium.com/@ishwarya1011.hidkimath/system-design-feedback-system-88a67b81a8b3" target="_blank">Medium</a></p>
-<h3>Facebook 时间线功能</h3>
+<h1>Facebook 时间线功能</h1>
 <p>Facebook timeline function（功能型设计）</p>
 <p><a href="https://www.facebook.com/notes/10158791565662200/" target="_blank">Facebook</a>；<a href="https://www.sitepoint.com/design-a-creative-facebook-timeline-cover-in-photoshop/" target="_blank">Sitepoint</a>；<a href="https://www.9lessons.info/2012/01/facebook-timeline-design-using-jquery.html" target="_blank">9lessons</a>；<a href="https://highscalability.com/facebook-timeline-brought-to-you-by-the-power-of-denormaliza/" target="_blank">Highscalability</a></p>
-<h3>Facebook 聊天功能</h3>
+<h1>Facebook 聊天功能</h1>
 <p>Facebook chat function（功能型设计）</p>
 <p><a href="https://www.geeksforgeeks.org/desiging-facebook-messenger-system-design-interview/" target="_blank">GeeksforGeeks</a>；<a href="https://dev.to/zeeshanali0704/design-a-global-chat-service-like-whatsapp-or-a-facebook-messenger-4kd5" target="_blank">Dev</a>；<a href="https://medium.com/womenintechnology/system-design-messaging-system-facebook-messenger-100962e9a820" target="_blank">Medium</a>；<a href="https://www.facebook.com/notes/10158772733762200/?id=9445547199&index=0" target="_blank">Facebook</a></p>
-<h3>类似 Facebook 的图形搜索功能</h3>
+<h1>类似 Facebook 的图形搜索功能</h1>
 <p>Graph search function like Facebook's（功能型设计）</p>
 <p><a href="https://www.facebook.com/notes/10158791578747200/" target="_blank">Facebook</a>；<a href="https://www.facebook.com/notes/10158791579097200/" target="_blank">Facebook</a>；<a href="https://spectrum.ieee.org/the-making-of-facebooks-graph-search" target="_blank">Spectrum</a>；<a href="https://engineering.fb.com/2013/03/06/core-infra/under-the-hood-building-out-the-infrastructure-for-graph-search/" target="_blank">Engineering</a>；<a href="https://www.facebook.com/notes/10158791580622200/" target="_blank">Facebook</a></p>
-<h3>类似CloudFlare的内容交付网络</h3>
+<h1>类似CloudFlare的内容交付网络</h1>
 <p>Content delivery network like CloudFlare（功能型设计）</p>
 <p><a href="https://figshare.com/articles/journal_contribution/Globally_distributed_content_delivery/6605972?file=12096455" target="_blank">Figshare</a>；<a href="https://www.geeksforgeeks.org/designing-content-delivery-network-cdn-system-design/" target="_blank">GeeksforGeeks</a>；<a href="https://www.linkedin.com/pulse/designing-content-delivery-network-cdn-cloudastra-technologies-rfk9c/" target="_blank">Linkedin</a>；<a href="https://medium.com/@roopa.kushtagi/a-z-of-content-delivery-networks-cdn-making-the-internet-faster-and-more-reliable-57786b46a058" target="_blank">Medium</a></p>
-<h3>类似 Twitter 的热门话题系统</h3>
+<h1>类似 Twitter 的热门话题系统</h1>
 <p>Trending topic system like Twitter's（功能型设计）</p>
 <p><a href="https://dilipkumar.medium.com/trending-hashtag-system-design-79123799e30f" target="_blank">Dilipkumar</a>；<a href="https://mecha-mind.medium.com/system-design-top-k-trending-hashtags-4e12de5bb846" target="_blank">Mecha-mind</a>；<a href="https://snikolov.wordpress.com/2012/11/14/early-detection-of-twitter-trends/" target="_blank">Snikolov</a></p>
-<h3>随机 ID 生成系统</h3>
+<h1>随机 ID 生成系统</h1>
 <p>Random ID generation system（架构型设计）</p>
 <p><a href="https://blog.x.com/engineering/en_us/a/2010/announcing-snowflake" target="_blank">Blog</a>；<a href="https://www.geeksforgeeks.org/design-a-random-id-generation-system/" target="_blank">GeeksforGeeks</a>；<a href="https://github.com/twitter-archive/snowflake" target="_blank">GitHub</a></p>
-<h3>返回某个时间间隔内前 k 个请求</h3>
+<h1>返回某个时间间隔内前 k 个请求</h1>
 <p>Return the top k requests during a time interval（功能型设计）</p>
 <p><a href="https://www.cs.ucsb.edu/sites/default/files/documents/2005-23.pdf" target="_blank">Efaidnbmnnnibpcajpcglclefindmkaj</a>；<a href="https://medium.com/@efekaptan/top-k-frequent-items-in-a-time-sliding-window-780d82c7c31a" target="_blank">Medium</a>；<a href="https://davis.wpi.edu/xmdv/docs/EDBT11-diyang.pdf" target="_blank">Efaidnbmnnnibpcajpcglclefindmkaj</a></p>
-<h3>提供来自多个数据中心的数据的系统</h3>
+<h1>提供来自多个数据中心的数据的系统</h1>
 <p>System that serves data from multiple data centers（功能型设计）</p>
 <p><a href="https://highscalability.com/how-google-serves-data-from-multiple-datacenters/" target="_blank">Highscalability</a>；<a href="https://www.geeksforgeeks.org/cross-data-center-replication/" target="_blank">GeeksforGeeks</a></p>
-<h3>在线多人纸牌游戏</h3>
+<h1>在线多人纸牌游戏</h1>
 <p>Online multiplayer card game（功能型设计）</p>
 <p><a href="https://web.archive.org/web/20180929181117/http:/www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html" target="_blank">Web</a>；<a href="https://maticz.com/how-to-create-an-online-card-game" target="_blank">Maticz</a>；<a href="https://medium.com/@bryangaston/building-a-multiplayer-online-board-game-part-2-7f50b677926b" target="_blank">Medium</a>；<a href="https://www.quora.com/Card-game-How-can-I-make-a-multiplayer-online-card-game-such-as-poker-with-HTML5" target="_blank">Quora</a>；<a href="http://buildnewgames.com/real-time-multiplayer/" target="_blank">Buildnewgames</a></p>
-<h3>垃圾收集系统</h3>
+<h1>垃圾收集系统</h1>
 <p>Garbage collection system（优化型设计）</p>
 <p><a href="https://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/" target="_blank">Journal</a>；<a href="https://dzone.com/articles/building-your-own-automatic-garbage-collector-a-gu" target="_blank">Dzone</a>；<a href="https://medium.com/double-pointer/system-design-interview-designing-a-garbage-collection-system-81a54eb1a582" target="_blank">Medium</a>；<a href="https://courses.cs.washington.edu/courses/csep521/07wi/prj/rick.pdf" target="_blank">Efaidnbmnnnibpcajpcglclefindmkaj</a></p>
-<h3>API 速率限制器</h3>
+<h1>API 速率限制器</h1>
 <p>API rate limiter（优化型设计）</p>
 <p><a href="https://stripe.com/blog/" target="_blank">Stripe</a>；<a href="https://www.geeksforgeeks.org/how-to-design-a-rate-limiter-api-learn-system-design/" target="_blank">GeeksforGeeks</a>；<a href="https://synthia-li.github.io/Grok%20API%20Rate%20Limiter.htm" target="_blank">Synthia Blog</a>；<a href="https://medium.com/geekculture/system-design-design-a-rate-limiter-81d200c9d392" target="_blank">Medium</a>；<a href="https://systemsdesign.cloud/SystemDesign/RateLimiter" target="_blank">Systemsdesign</a></p>
-<h3>证券交易所（如纳斯达克或币安）</h3>
+<h1>证券交易所（如纳斯达克或币安）</h1>
 <p>Stock Exchange (like NASDAQ or Binance)（功能型设计）</p>
 <p><a href="https://www.linkedin.com/pulse/stock-exchange-design-filip-konkowski-9y0ae/" target="_blank">Linkedin</a>；<a href="https://www.around25.com/blog/building-a-trading-engine-for-a-crypto-exchange" target="_blank">Around25</a></p>
-<h3>
-一致性哈希</h3>
+<h1>
+一致性哈希</h1>
 <p>Consistent Hashing（功能型设计）</p>
 <p><a href="https://synthia-li.github.io/Alex5%20Consistent%20Hashing.htm" target="_blank">Synthia Blog</a>；<a href="https://dev.to/karanpratapsingh/system-design-consistent-hashing-1dbl" target="_blank">Dev</a>；<a href="https://haril.dev/en/blog/2023/06/04/Consistent-Hashing" target="_blank">Haril</a>；<a href="https://www.tryexponent.com/courses/system-design-interviews/consistent-hashing" target="_blank">Tryexponent</a>；<a href="https://www.linkedin.com/pulse/system-design-principle-consistent-hashing-momen-negm-u3mif/" target="_blank">Linkedin</a>；<a href="https://systemdesign.one/consistent-hashing-explained/" target="_blank">Systemdesign</a>；<a href="https://www.geeksforgeeks.org/consistent-hashing/" target="_blank">GeeksforGeeks</a></p>
-<h3>在分布式系统中唯一的ID生成器</h3>
+<h1>在分布式系统中唯一的ID生成器</h1>
 <p>Unique ID Generator In Distributed Systems（架构型设计）</p>
 <p><a href="https://synthia-li.github.io/Alex7%20Unique%20ID%20Generator%20In%20Distributed%20Systems.htm" target="_blank">Synthia Blog</a>；<a href="https://medium.com/@sandeep4.verma/system-design-distributed-global-unique-id-generation-d6a440cc8e5" target="_blank">Medium</a>；<a href="https://dev.to/zeeshanali0704/design-a-unique-id-generator-in-distributed-systems-2ale" target="_blank">Dev</a>；<a href="https://blog.devtrovert.com/p/how-to-generate-unique-ids-in-distributed" target="_blank">Blog</a>；<a href="https://blog.algomaster.io/p/unique-ids-in-distributed-systems" target="_blank">Blog</a>；<a href="https://aman.ai/sysdes/uniqueIDForDB/" target="_blank">Aman</a></p>
-<h3>通知系统</h3>
+<h1>通知系统</h1>
 <p>Notification System（功能型设计）</p>
 <p><a href="https://synthia-li.github.io/Alex10%20Notification%20System.htm" target="_blank">Synthia Blog</a>；<a href="https://medium.com/@naveendharnia0029/design-a-notification-system-2974be8c82ce" target="_blank">Medium</a>；<a href="https://shivam-sinha.medium.com/design-notification-system-270506e944e0" target="_blank">Shivam-sinha</a>；<a href="https://www.linkedin.com/pulse/design-notification-system-saral-saxena--8hj9c/" target="_blank">Linkedin</a>；<a href="https://www.designgurus.io/course-play/grokking-system-design-interview-ii/doc/designing-a-notification-system" target="_blank">Designgurus</a>；<a href="https://www.geeksforgeeks.org/design-notification-services-system-design/" target="_blank">GeeksforGeeks</a></p>
-<h3>类似亚马逊的 Alexa 系统</h3>
+<h1>类似亚马逊的 Alexa 系统</h1>
 <p>Alexa System like Amazon's（功能型设计）</p>
 <p><a href="https://synthia-li.github.io/Alex12%20Alexat%20System.htm" target="_blank">Synthia Blog</a>；<a href="https://developer.amazon.com/en-US/docs/alexa/alexa-presentation-language/apl-alexa-packages-overview.html" target="_blank">Developer</a>；<a href="https://www.cardinalpeak.com/blog/how-to-cardinal-peaks-amazon-alexa-design-guide" target="_blank">Cardinalpeak</a>；<a href="https://shivam-sinha.medium.com/alexa-device-input-output-object-oriented-design-8d00d8669de1" target="_blank">Shivam-sinha</a></p>
-<h3>搜索自动完成系统</h3>
+<h1>搜索自动完成系统</h1>
 <p>Search Autocomplete System（功能型设计）</p>
 <p><a href="https://synthia-li.github.io/Alex13%20Search%20Autocomplete%20System.htm" target="_blank">Synthia Blog</a>；<a href="https://systemdesignprep.com/autocomplete" target="_blank">Systemdesignprep</a>；<a href="https://systemdesignschool.io/problems/typeahead/solution" target="_blank">SystemDesignSchool</a>；<a href="https://github.com/doocs/leetcode/blob/main/solution/0600-0699/0642.Design%20Search%20Autocomplete%20System/README_EN.md" target="_blank">GitHub</a>；<a href="https://leetcode.ca/all/642.html" target="_blank">Leetcode</a>；<a href="https://aaronice.gitbook.io/lintcode/data_structure/design-search-autocomplete-system" target="_blank">Aaronice</a>；<a href="https://algo.monster/liteproblems/642" target="_blank">Algo</a>；<a href="https://www.geeksforgeeks.org/googles-search-autocomplete-high-level-designhld/" target="_blank">GeeksforGeeks</a></p>
-<h3>类似谷歌云端硬盘的分布式文件存储系统</h3>
+<h1>类似谷歌云端硬盘的分布式文件存储系统</h1>
 <p>Distributed file storage system like Google Drive（架构型设计）</p>
 <p><a href="https://synthia-li.github.io/Alex15%20Google%20Drive.htm" target="_blank">Synthia Blog</a>；<a href="https://www.jointaro.com/interview-insights/google/how-would-you-design-a-distributed-file-storage-system-like-google-drive/" target="_blank">Jointaro</a>；<a href="https://www.pankajtanwar.in/blog/system-design-how-to-design-google-drive-dropbox-a-cloud-file-storage-service" target="_blank">Pankajtanwar</a>；<a href="https://www.linkedin.com/pulse/designing-cloud-storage-system-like-google-drive-akash-srivastava-xjocc/" target="_blank">Linkedin</a>；<a href="https://medium.com/@murataslan1/designing-a-large-scale-distributed-file-storage-and-sharing-system-like-google-drive-a-a2e7a008c77b" target="_blank">Medium</a></p>
-<h3>“票务大师”系统</h3>
+<h1>“票务大师”系统</h1>
 <p>Ticketmaster system（功能型设计）</p>
 <p><a href="https://synthia-li.github.io/Grok%20Design%20Ticketmaster.htm" target="_blank">Synthia Blog</a>；<a href="https://www.educative.io/blog/ticketmaster-system-design" target="_blank">Educative</a>；<a href="https://github.com/RickSayd/navigating-system-design/blob/master/designs/ticketmaster.md" target="_blank">GitHub</a>；<a href="https://www.linkedin.com/pulse/design-ticketmaster-system-aman-lalwani-zxsqc/" target="_blank">Linkedin</a>；<a href="https://systemdesignschool.io/problems/ticketmaster/solution" target="_blank">SystemDesignSchool</a>；<a href="https://dilipkumar.medium.com/ticket-master-system-design-e794c51d79f7" target="_blank">Dilipkumar</a>；<a href="https://www.hellointerview.com/learn/system-design/problem-breakdowns/ticketmaster" target="_blank">HelloInterview</a></p>
-<h3>类似 Pastebin 的文本存储服务</h3>
+<h1>类似 Pastebin 的文本存储服务</h1>
 <p>Text Storage Service like Pastebin（功能型设计）</p>
 <p><a href="https://synthia-li.github.io/Grok%20Pastebin.htm" target="_blank">Synthia Blog</a>；<a href="https://medium.com/codex/designing-pastebin-77e6e86172eb" target="_blank">Medium</a>；<a href="https://nikhilgupta1.medium.com/pastebin-system-design-1370f631750d" target="_blank">Nikhilgupta1</a>；<a href="https://www.linkedin.com/pulse/designing-scalable-pastebin-application-aws-filip-konkowski-mbsme/" target="_blank">Linkedin</a>；<a href="https://systemdesignschool.io/problems/pastebin/solution" target="_blank">SystemDesignSchool</a>；<a href="https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design/pastebin" target="_blank">GitHub</a>；<a href="https://ujjwalbhardwaj.me/post/system-design-design-pastebin-text-storage-system/" target="_blank">Ujjwalbhardwaj</a>；<a href="https://www.geeksforgeeks.org/design-text-storage-service-like-pastebin/" target="_blank">GeeksforGeeks</a>；<a href="https://systemdesign.one/system-design-pastebin/" target="_blank">Systemdesign</a></p>
-<h3>类似 Twitter 的搜索系统</h3>
+<h1>类似 Twitter 的搜索系统</h1>
 <p>Search system like Twitter（架构型设计）</p>
 <p><a href="https://synthia-li.github.io/Grok%20Twitter%20Search.htm" target="_blank">Synthia Blog</a>；<a href="https://mecha-mind.medium.com/system-design-twitter-search-ccb29c48d9b6" target="_blank">Mecha-mind</a>；<a href="https://levelup.gitconnected.com/twitter-search-system-design-fd1391e7da50" target="_blank">Levelup</a>；<a href="https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design/twitter" target="_blank">GitHub</a>；<a href="https://astikanand.github.io/techblogs/high-level-system-design/design-twitter-search" target="_blank">Astikanand</a>；<a href="https://codemia.io/system-design/design-twitter-search/solutions/sc5ibw/My-Solution-for-Design-Twitter-Search-with-Score-910" target="_blank">Codemia</a></p>
-<h3>像 Twitter 这样的系统</h3>
+<h1>像 Twitter 这样的系统</h1>
 <p>System like Twitter（功能型设计）</p>
 <p><a href="https://synthia-li.github.io/Grok%20Twitter.htm" target="_blank">Synthia Blog</a>；<a href="https://medium.com/@karan99/system-design-twitter-793ab06c9355" target="_blank">Medium</a>；<a href="https://dev.to/zeeshanali0704/designing-twitter-a-system-design-interview-question-221e" target="_blank">Dev</a>；<a href="https://www.codekarle.com/system-design/Twitter-system-design.html" target="_blank">Codekarle</a>；<a href="https://hayksimonyan.substack.com/p/system-design-interview-design-twitter" target="_blank">Hayksimonyan</a>；<a href="https://www.linkedin.com/pulse/system-design-101-twitter-like-platform-shanoj-kumar-v-ogwtc/" target="_blank">Linkedin</a>；<a href="https://www.geeksforgeeks.org/design-twitter-a-system-design-interview-question/" target="_blank">GeeksforGeeks</a></p>
-<h3>预输入建议系统</h3>
+<h1>预输入建议系统</h1>
 <p>Typeahead Suggestion system（功能型设计）</p>
 <p><a href="https://synthia-li.github.io/Grok%20Typeahead%20Suggestion.htm" target="_blank">Synthia Blog</a>；<a href="https://github.com/gitgik/distributed-system-design/blob/master/designing_typeahead_suggestion.md" target="_blank">GitHub</a>；<a href="https://www.educative.io/courses/grokking-the-system-design-interview/system-design-the-typeahead-suggestion-system" target="_blank">Educative</a></p>
-<h3>类似 Uber 的后端系统</h3>
+<h1>类似 Uber 的后端系统</h1>
 <p>Backend system like Uber（功能型设计）</p>
 <p><a href="https://synthia-li.github.io/Grok%20Uber%20backend.htm" target="_blank">Synthia Blog</a>；<a href="https://medium.com/@apurvaagrawal_95485/designing-uber-backend-00969b05be93" target="_blank">Medium</a>；<a href="https://github.com/gitgik/distributed-system-design/blob/master/designing_uber_backend.md" target="_blank">GitHub</a>；<a href="https://www.linkedin.com/pulse/how-make-app-like-uber-cost-features-tech-stack-revvlab/" target="_blank">Linkedin</a>；<a href="https://www.educative.io/blog/uber-backend-system-design" target="_blank">Educative</a>；<a href="https://www.geeksforgeeks.org/system-design-of-uber-app-uber-system-architecture/" target="_blank">GeeksforGeeks</a></p>
-<h3>Yelp 或附近好友系统</h3>
+<h1>Yelp 或附近好友系统</h1>
 <p>Yelp or Nearby Friends system（功能型设计）</p>
 <p><a href="https://synthia-li.github.io/Grok%20Yelp%20or%20Nearby%20Friends.htm" target="_blank">Synthia Grok Blog</a>；<a href="https://github.com/Synthia-Li/Synthia-Li.github.io/blob/main/Alex2%202%20Nearby%20Friends.pdf" target="_blank">Synthia Alex Blog</a>；<a href="https://medium.com/@apurvaagrawal_95485/lets-design-a-yelp-like-service-where-users-can-search-for-nearby-places-like-restaurants-746cd97ae54d" target="_blank">Medium</a>；<a href="https://www.scribd.com/document/696430430/14-Designing-Yelp-or-Nearby-Friends-Grokking-the-System-Design-Interview" target="_blank">Scribd</a>；<a href="https://codemia.io/system-design/design-yelp-or-nearby-friends/solutions/saelup/Design-Yelp-or-Nearby-Friends-with-Score-810" target="_blank">Codemia</a>；<a href="https://www.enjoyalgorithms.com/blog/design-yelp" target="_blank">Enjoyalgorithms</a>；<a href="https://jc1175.medium.com/how-i-would-design-yelp-or-nearby-friends-8cb17e831525" target="_blank">Jc1175</a></p>
-<h3>像 Netflix 这样的系统</h3>
+<h1>像 Netflix 这样的系统</h1>
 <p>System like Netflix（功能型设计）</p>
 <p><a href="https://synthia-li.github.io/Grok%20Youtube%20or%20Netflix.htm" target="_blank">Synthia Blog</a>；<a href="https://www.designgurus.io/answers/detail/how-to-design-a-system-like-netflix" target="_blank">Designgurus</a>；<a href="https://dev.to/karanpratapsingh/system-design-netflix-3d9g" target="_blank">Dev</a>；<a href="https://javachallengers.com/design-netflix-java/" target="_blank">Javachallengers</a>；<a href="https://www.fastpix.io/blog/system-design-and-architecture-for-a-netflix-like-app" target="_blank">Fastpix</a>；<a href="https://medium.com/@lazygeek78/system-design-of-netflix-8a31bf9ca53f" target="_blank">Medium</a>；<a href="https://www.geeksforgeeks.org/system-design-netflix-a-complete-architecture/" target="_blank">GeeksforGeeks</a></p>
-<h3>类似 Facebook Messenger 的系统</h3>
+<h1>类似 Facebook Messenger 的系统</h1>
 <p>System like Facebook Messenger（功能型设计）</p>
 <p><a href="https://synthia-li.github.io/Grok%20Facebook%20Messenger.htm" target="_blank">Synthia Blog</a>；<a href="https://medium.com/womenintechnology/system-design-messaging-system-facebook-messenger-100962e9a820" target="_blank">Medium</a>；<a href="https://www.geeksforgeeks.org/desiging-facebook-messenger-system-design-interview/" target="_blank">GeeksforGeeks</a></p>
-<h3>像红迪网的网站</h3>
+<h1>像红迪网的网站</h1>
 <p>Website like Reddit（功能型设计）</p>
 <p><a href="https://www.geeksforgeeks.org/design-reddit-system-design/" target="_blank">GeeksforGeeks</a>；<a href="https://www.isitwp.com/create-a-reddit-like-website/" target="_blank">Isitwp</a>；<a href="https://www.reddit.com/r/Python/comments/4huonc/creating_a_redditlike_website/" target="_blank">Reddit</a></p>
-<h3>像 Instagram 这样的系统</h3>
+<h1>像 Instagram 这样的系统</h1>
 <p>System like Instagram（功能型设计）</p>
 <p><a href="https://www.geeksforgeeks.org/design-instagram-a-system-design-interview-question/" target="_blank">GeeksforGeeks</a>；<a href="https://medium.com/@lazygeek78/system-design-series-cfa60db16c27" target="_blank">Medium</a>；<a href="https://www.jointaro.com/interview-insights/meta/how-would-you-design-a-system-similar-to-instagram/" target="_blank">Jointaro</a>；<a href="https://getsdeready.com/system-design-for-social-media-platforms-like-instagram/?srsltid=AfmBOorkEweENqBA7us7MaOKTcYWm3DMrgt7Pe3kTWBnjbPcxttVtPTV" target="_blank">Getsdeready</a>；<a href="https://nikhilgupta1.medium.com/instagram-system-design-f62772649f90" target="_blank">Nikhilgupta1</a>；<a href="https://synthia-li.github.io/Grok%20Instagram.htm" target="_blank">Synthia Blog</a></p>
-<h3>排行榜系统</h3>
+<h1>排行榜系统</h1>
 <p>Leaderboard system （功能型设计）</p>
 <p><a href="https://github.com/Synthia-Li/Synthia-Li.github.io/blob/main/Alex2%2010%20Real-time%20Gaming%20Leaderboard.pdf" target="_blank">Synthia Alex2 Blog</a>；<a href="https://systemdesign.one/leaderboard-system-design/" target="_blank">Systemdesign</a>；<a href="https://medium.com/@nvedansh/design-a-realtime-gaming-leaderboard-df0dcb9183ae" target="_blank">Medium</a>；<a href="https://www.coderbased.com/p/dot6-leaderboard-system-design" target="_blank">Coderbased</a>；<a href="https://blog.devops.dev/leaderboard-system-build-a-scalable-design-for-millions-of-users-810c582cf381" target="_blank">Blog</a>；<a href="https://www.lowleveldesign.io/LLD/GameDesign/Scoreboard" target="_blank">Lowleveldesign</a>；<a href="https://algo.monster/liteproblems/1244" target="_blank">Algo</a>；<a href="https://blog.algomaster.io/p/design-real-time-gaming-leaderboard" target="_blank">Blog</a>；<a href="https://medium.com/@mayilb77/design-a-real-time-leaderboard-system-for-millions-of-users-08b96b4b64ce" target="_blank">Medium</a></p>
-<h3>停车场（车库）系统</h3>
+<h1>停车场（车库）系统</h1>
 <p>Parking Lot (Garage) System（功能型设计）</p>
 <p><a href="https://www.geeksforgeeks.org/designing-parking-lot-garage-system-system-design/" target="_blank">GeeksforGeeks</a>；<a href="https://www.designgurus.io/course-play/grokking-the-object-oriented-design-interview/doc/design-a-parking-lot" target="_blank">Designgurus</a>；<a href="https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-a-parking-lot.md" target="_blank">GitHub</a>；<a href="https://dev.to/jayaprasanna_roddam/system-design-design-a-parking-lot-system-4194" target="_blank">Dev</a>；<a href="https://ak67373.medium.com/parking-lot-system-design-1826643bdc76" target="_blank">Ak67373</a></p>
-<h3>自动售货机系统</h3>
+<h1>自动售货机系统</h1>
 <p>Vending Machine system（功能型设计）</p>
 <p><a href="https://www.geeksforgeeks.org/vending-machine-high-level-system-design/" target="_blank">GeeksforGeeks</a>；<a href="https://medium.com/swlh/vending-machine-design-a-state-design-pattern-approach-5b7e1a026cd2" target="_blank">Medium</a>；<a href="https://dev.to/thesaltree/system-design-building-a-vending-machine-in-go-340p" target="_blank">Dev</a>；<a href="https://linkitsoft.com/vending-machine-system/" target="_blank">Linkitsoft</a>；<a href="https://www.sciencedirect.com/science/article/pii/S2212827120308970" target="_blank">Sciencedirect</a>；<a href="https://www.geeksforgeeks.org/vending-machine-low-level-design/" target="_blank">GeeksforGeeks</a></p>
-<h3>身份验证系统</h3>
+<h1>身份验证系统</h1>
 <p>Authentication System（功能型设计）</p>
 <p><a href="https://www.geeksforgeeks.org/designing-authentication-system-system-design/" target="_blank">GeeksforGeeks</a>；<a href="https://hackernoon.com/designing-functional-authentication-and-authorization-systems" target="_blank">Hackernoon</a>；<a href="https://shivamr.hashnode.dev/authentication-system-design" target="_blank">Shivamr</a>；<a href="https://www.tryexponent.com/courses/system-design-interviews/authentication-authorization" target="_blank">Tryexponent</a>；<a href="https://medium.com/@aakashrajur/authentication-system-design-cfa95ed2dfaa" target="_blank">Medium</a></p>
-<h3>统一支付接口 (UPI) 系统</h3>
+<h1>统一支付接口 (UPI) 系统</h1>
 <p>Unified Payments Interface (UPI) System（功能型设计）</p>
 <p><a href="https://www.geeksforgeeks.org/designing-upi-system-design/" target="_blank">GeeksforGeeks</a>；<a href="https://www.linkedin.com/pulse/system-design-unified-payments-interface-upi-nikhil-joshi-7s5kf/" target="_blank">Linkedin</a>；<a href="https://dev.to/zeeshanali0704/system-design-upi-unified-payment-interface-2ng3" target="_blank">Dev</a></p>
-<h3>类似 Spotify 的应用程序</h3>
+<h1>类似 Spotify 的应用程序</h1>
 <p>App like Spotify（功能型设计）</p>
 <p><a href="https://blog.algomaster.io/p/design-spotify-system-design-interview" target="_blank">Blog</a>；<a href="https://ripenapps.com/blog/create-music-streaming-app-like-spotify/" target="_blank">Ripenapps</a>；<a href="https://www.linkedin.com/pulse/how-create-app-like-spotify-cost-zentekinfosoft-y9doc/" target="_blank">Linkedin</a>；<a href="https://www.builder.ai/blog/create-a-music-streaming-app-like-spotify" target="_blank">Builder</a>；<a href="https://www.rst.software/blog/how-to-build-a-media-streaming-app-like-spotify" target="_blank">Rst</a></p>
-<h3>分布式作业调度程序</h3>
+<h1>分布式作业调度程序</h1>
 <p>Distributed Job Scheduler（架构型设计）</p>
 <p><a href="https://blog.algomaster.io/p/design-a-distributed-job-scheduler" target="_blank">Blog</a>；<a href="https://www.geeksforgeeks.org/design-distributed-job-scheduler-system-design/" target="_blank">GeeksforGeeks</a>；<a href="https://dilipkumar.medium.com/distributed-job-scheduler-system-design-8ae13a8dee83" target="_blank">Dilipkumar</a>；<a href="https://www.linkedin.com/pulse/mastering-distributed-job-scheduling-system-design-saboor-siddiqui-gtiac/" target="_blank">Linkedin</a>；<a href="https://www.hellointerview.com/learn/system-design/problem-breakdowns/job-scheduler" target="_blank">HelloInterview</a>；<a href="https://medium.com/@mayilb77/design-a-distributed-job-scheduler-for-millions-of-tasks-in-daily-operations-4132dc6d645f" target="_blank">Medium</a></p>
-<h3>可扩展的通知服务</h3>
+<h1>可扩展的通知服务</h1>
 <p>Scalable Notification Service（功能型设计）</p>
 <p><a href="https://blog.algomaster.io/p/design-a-scalable-notification-service" target="_blank">Blog</a>；<a href="https://www.fyno.io/blog/how-to-build-a-scalable-notification-service-a-developers-guide-cm2tyu0lk00d8wixoiub6t3xz" target="_blank">Fyno</a>；<a href="https://surajanand.substack.com/p/designing-a-scalable-notification?utm_campaign=post&utm_medium=web" target="_blank">Surajanand</a>；<a href="https://www.cashfree.com/blog/building-scaleable-notification-service/" target="_blank">Cashfree</a>；<a href="https://blog.quastor.org/p/build-scalable-notification-service" target="_blank">Blog</a>；<a href="https://galaxy.ai/youtube-summarizer/designing-a-scalable-notification-service-a-comprehensive-guide-T_K7lBZiM7A" target="_blank">Galaxy</a>；<a href="https://dev.to/suprsend/building-a-scalable-notification-service-with-grpc-and-microservices-l6d" target="_blank">Dev</a>；<a href="https://adityagoel123.medium.com/designing-scalable-notification-system-79f83272755e" target="_blank">Adityagoel123</a></p>
-<h3>类似 Tinder 的约会应用</h3>
+<h1>类似 Tinder 的约会应用</h1>
 <p>Dating App Like Tinder（功能型设计）</p>
 <p><a href="https://www.hellointerview.com/learn/system-design/problem-breakdowns/tinder" target="_blank">HelloInterview</a>；<a href="https://upstackstudio.com/blog/how-to-create-dating-app/" target="_blank">Upstackstudio</a>；<a href="https://www.spaceotechnologies.com/blog/how-to-make-a-dating-app/" target="_blank">Spaceotechnologies</a>；<a href="https://innowise.com/blog/how-much-does-it-cost-to-create-an-app-like-tinder/" target="_blank">Innowise</a>；<a href="https://www.fullestop.com/blog/tinder-like-dating-app-development-steps-cost-and-factors" target="_blank">Fullestop</a>；<a href="https://www.spec-india.com/blog/how-to-build-a-dating-app-like-tinder" target="_blank">Spec-india</a></p>
-<h3>类似亚马逊的电子商务商店</h3>
+<h1>类似亚马逊的电子商务商店</h1>
 <p>E-commerce Store like Amazon
 Keywords: real-time collaboration, conflict resolution algorithm (CRDT/OT), version control, locking mechanism.（功能型设计）</p>
 <p>关键词：用户系统、购物车、库存管理、支付处理、订单系统。</p>
 <p><a href="https://www.appmysite.com/blog/how-to-create-an-ecommerce-app-like-amazon/" target="_blank">Appmysite</a>；<a href="https://www.sharetribe.com/how-to-build/website-like-amazon/" target="_blank">Sharetribe</a>；<a href="https://cedcommerce.com/blog/how-to-create-a-website-like-amazon/?srsltid=AfmBOoo1yv4JsUfN-SkwSpb7CMjoBmiiX1aSPG8A3IcBgz9Xmy11lzax" target="_blank">Cedcommerce</a>；<a href="https://medium.com/@ibrahim.zananiri/design-amazon-e-commerce-system-7f2dd57637bb" target="_blank">Medium</a></p>
-<h3>类似 TikTok 的应用程序</h3>
+<h1>类似 TikTok 的应用程序</h1>
 <p>App like TikTok（功能型设计）</p>
 <p><a href="https://www.rst.software/blog/how-to-build-a-video-sharing-app-like-tiktok" target="_blank">Rst</a>；<a href="https://medium.com/@engineervishvnath/design-social-media-app-like-tiktok-for-android-5f44462f4dad" target="_blank">Medium</a>；<a href="https://marutitech.com/how-to-build-an-app-like-tiktok/" target="_blank">Marutitech</a>；<a href="https://www.uptech.team/blog/create-app-like-tiktok" target="_blank">Uptech</a></p>
-<h3>类似 Shopify 的网上商店</h3>
+<h1>类似 Shopify 的网上商店</h1>
 <p>Web Store like Shopify（功能型设计）</p>
 <p><a href="https://zapier.com/blog/best-ecommerce-shopping-cart-software/" target="_blank">Zapier</a>；<a href="https://www.shopify.com/blog/best-ecommerce-sites" target="_blank">Shopify</a>；<a href="https://infostride.com/build-an-ecommerce-website-builder-like-shopify/" target="_blank">Infostride</a></p>
-<h3>类似 Airbnb 的度假网站</h3>
+<h1>类似 Airbnb 的度假网站</h1>
 <p>Vacation website like Airbnb（功能型设计）</p>
 <p><a href="https://github.com/Synthia-Li/Synthia-Li.github.io/blob/main/Alex2%207%20Hotel%20Reservation%20System.pdf" target="_blank">Synthia Alex2 Blog</a>；<a href="https://www.sharetribe.com/how-to-build/website-like-airbnb/" target="_blank">Sharetribe</a>；<a href="https://ascendixtech.com/how-to-build-website-like-airbnb/" target="_blank">Ascendixtech</a>；<a href="https://www.dittofi.com/learn/how-to-build-a-website-like-airbnb" target="_blank">Dittofi</a>；<a href="https://www.codica.com/blog/how-to-build-website-like-airbnb-step-by-step-guide/" target="_blank">Codica</a></p>
-<h3>类似 Kafka 的分布式消息队列</h3>
+<h1>类似 Kafka 的分布式消息队列</h1>
 <p>Distributed Message Queue like Kafka（架构型设计）</p>
 <p><a href="https://github.com/Synthia-Li/Synthia-Li.github.io/blob/main/Alex2%204%20Distributed%20Message%20Queue.pdf" target="_blank">Synthia Alex2 Blog</a>；<a href="https://medium.com/@devcorner/day-4-designing-a-distributed-messaging-queue-kafka-vs-rabbitmq-c4abcc0767d3" target="_blank">Medium</a>；<a href="https://www.geeksforgeeks.org/distributed-messaging-system-system-design/" target="_blank">GeeksforGeeks</a>；<a href="https://serhatgiydiren.com/system-design-interview-distributed-message-queue/" target="_blank">Serhatgiydiren</a>；<a href="https://workat.tech/machine-coding/practice/design-distributed-queue-cuudq0sk0v14" target="_blank">Workat</a></p>
-<h3>航班预订系统</h3>
+<h1>航班预订系统</h1>
 <p>Flight Booking System（功能型设计）</p>
 <p><a href="https://www.geeksforgeeks.org/how-to-design-database-for-flight-reservation-system/" target="_blank">GeeksforGeeks</a>；<a href="https://medium.com/@abhishek.manjunath.1999/design-a-database-for-flight-booking-system-from-scratch-8f0e900ac9df" target="_blank">Medium</a>；<a href="https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-an-airline-management-system.md" target="_blank">GitHub</a>；<a href="https://www.naukri.com/code360/library/design-an-airline-management-system-low-level-design" target="_blank">Naukri</a>；<a href="https://medium.com/@abhishekranjandev/building-a-flight-reservation-system-like-expedia-9df3874c9960" target="_blank">Medium</a></p>
-<h3>在线代码编辑器</h3>
+<h1>在线代码编辑器</h1>
 <p>Online Code Editor（功能型设计）</p>
 <p><a href="https://www.geeksforgeeks.org/designing-online-code-editor-system-design/" target="_blank">GeeksforGeeks</a></p>
-<h3>分析平台（指标和日志）</h3>
+<h1>分析平台（指标和日志）</h1>
 <p>Analytics Platform (Metrics & Logging)（优化型设计）</p>
 <p><a href="https://www.finalroundai.com/interview-questions/google-system-design-challenges" target="_blank">Finalroundai</a></p>
-<h3>支付系统</h3>
+<h1>支付系统</h1>
 <p>Payment System
 Keywords: security (encryption), transaction processing, failure retry, risk control mechanism.（功能型设计）</p>
 <p>关键词：安全性（加密）、事务处理、失败重试、风控机制。</p>
 <p><a href="https://github.com/Synthia-Li/Synthia-Li.github.io/blob/main/Alex2%2011%20Payment%20System.pdf" target="_blank">Synthia Alex2 Blog</a>；<a href="https://souravsnigdha.medium.com/designing-a-payment-system-part-1-6b53732d7e03" target="_blank">Souravsnigdha</a>；<a href="https://www.linkedin.com/pulse/designing-payment-system-momen-negm/" target="_blank">Linkedin</a>；<a href="https://medium.com/@alexglushenkov/building-a-payment-system-like-stripe-or-rapyd-architecture-challenges-and-key-components-75358d2391e5" target="_blank">Medium</a>；<a href="https://www.cockroachlabs.com/blog/cockroachdb-payments-system-architecture/" target="_blank">Cockroachlabs</a>；<a href="https://newsletter.pragmaticengineer.com/p/designing-a-payment-system" target="_blank">Newsletter</a></p>
-<h3>数字钱包</h3>
+<h1>数字钱包</h1>
 <p>Digital Wallet（功能型设计）</p>
 <p><a href="https://github.com/Synthia-Li/Synthia-Li.github.io/blob/main/Alex2%2012%20Digital%20Wallet.pdf" target="_blank">Synthia Alex2 Blog</a>；<a href="https://dilipkumar.medium.com/digital-wallet-system-design-63a4e18edad6" target="_blank">Dilipkumar</a>；<a href="https://walletera.dev/designing-a-digital-wallet" target="_blank">Walletera</a>；<a href="https://qubstudio.com/blog/digital-wallet-design/" target="_blank">Qubstudio</a>；<a href="https://rewisoft.com/blog/how-to-design-your-own-e-wallet/" target="_blank">Rewisoft</a>；<a href="https://www.techmagic.co/blog/how-to-create-a-digital-wallet" target="_blank">Techmagic</a></p>
-<h3>类似Doordash的食品配送应用程序</h3>
+<h1>类似Doordash的食品配送应用程序</h1>
 <p>Food Delivery App like Doordash（功能型设计）</p>
 <p><a href="https://medium.com/@singourhimanshu3/design-food-delivery-app-mobile-system-design-356d87148575" target="_blank">Medium</a>；<a href="https://trangotech.com/blog/make-app-like-doordash/" target="_blank">Trangotech</a>；<a href="https://binmile.com/blog/usa-food-delivery-app-like-doordash/" target="_blank">Binmile</a>；<a href="https://www.amarinfotech.com/build-food-delivery-app-like-doordash.html" target="_blank">Amarinfotech</a>；<a href="https://www.linkedin.com/pulse/how-build-food-delivery-app-like-doordash-development-mobhc/" target="_blank">Linkedin</a></p>
-<h3>类似谷歌地图的系统</h3>
+<h1>类似谷歌地图的系统</h1>
 <p>System like Google Maps（功能型设计）</p>
 <p><a href="https://github.com/Synthia-Li/Synthia-Li.github.io/blob/main/Alex2%203%20Google%20Maps.pdf" target="_blank">Synthia Alex2 Blog</a>；<a href="https://www.geeksforgeeks.org/designing-google-maps-system-design/" target="_blank">GeeksforGeeks</a>；<a href="https://medium.com/@jyoti1308/designing-google-maps-d9865c3506ba" target="_blank">Medium</a>；<a href="https://systemdesignschool.io/problems/google-map/solution" target="_blank">SystemDesignSchool</a>；<a href="https://mecha-mind.medium.com/system-design-google-maps-c9dddca72df5" target="_blank">Mecha-mind</a>；<a href="https://experiencestack.co/google-maps-system-design-84174a1e23de" target="_blank">Experiencestack</a>；<a href="https://www.codekarle.com/system-design/Google_Maps-system-design.html" target="_blank">Codekarle</a></p>
-<h3>类似 Zoom 的视频会议应用程序</h3>
+<h1>类似 Zoom 的视频会议应用程序</h1>
 <p>Video Conferencing App Like Zoom（功能型设计）</p>
 <p><a href="https://www.rst.software/blog/video-conferencing-app-development-how-to-create-an-app-like-zoom" target="_blank">Rst</a>；<a href="https://www.pixelcrayons.com/blog/software-development/guide-to-build-a-video-conferencing-app-like-zoom/" target="_blank">Pixelcrayons</a>；<a href="https://stormotion.io/blog/make-a-video-conferencing-app/" target="_blank">Stormotion</a>；<a href="https://medium.com/that-feeling-when-it-is-compiler-fault/how-to-build-a-custom-zoom-like-application-abe21579bc9d" target="_blank">Medium</a>；<a href="https://www.linkedin.com/pulse/creating-video-conferencing-app-like-zoom-sandeep-srivastava-kitfc/" target="_blank">Linkedin</a></p>
-<h3>分布式计数器系统</h3>
+<h1>分布式计数器系统</h1>
 <p>Distributed Counter system（架构型设计）</p>
 <p><a href="https://systemdesign.one/distributed-counter-system-design/" target="_blank">Systemdesign</a>；<a href="https://jiangren.com.au/wiki/system-design/181dd76b576d80b29cb3f405935bb4f9" target="_blank">Jiangren</a>；<a href="https://devblogs.microsoft.com/cosmosdb/azure-cosmos-db-design-patterns-part-3-distributed-counter/" target="_blank">Devblogs</a>；<a href="https://medium.com/@bugfreeai/design-distributed-counter-interview-with-a-meta-e4-engineer-546b9952c66e" target="_blank">Medium</a></p>
-<h3>类似BookMyShow的票务预订系统</h3>
+<h1>类似BookMyShow的票务预订系统</h1>
 <p>Ticket Booking System like BookMyShow（功能型设计）</p>
 <p><a href="https://www.geeksforgeeks.org/design-movie-ticket-booking-system-like-bookmyshow/" target="_blank">GeeksforGeeks</a>；<a href="https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/movie-ticket-booking-system.md" target="_blank">GitHub</a>；<a href="https://www.websoptimization.com/blog/cost-to-develop-an-app-like-bookmyshow/" target="_blank">Websoptimization</a>；<a href="https://medium.com/@prithwish.samanta/online-movie-ticket-booking-platform-system-design-e-g-bookmyshow-69048440901c" target="_blank">Medium</a>；<a href="https://www.geeksforgeeks.org/design-bookmyshow-a-system-design-interview-question/" target="_blank">GeeksforGeeks</a></p>
-<h3>代码部署系统</h3>
+<h1>代码部署系统</h1>
 <p>Code Deployment System（功能型设计）</p>
 <p><a href="https://archit2693-aj.medium.com/system-design-distributed-code-deployment-system-6d2b0018df50" target="_blank">Archit2693-aj</a>；<a href="https://www.prodvana.io/blog/deployment-system-architecture" target="_blank">Prodvana</a>；<a href="https://docs.oracle.com/cd/E19199-01/817-5759/dep_architect.html" target="_blank">Docs</a>；<a href="https://codemia.io/system-design/design-a-code-deployment-system/solutions/sfyhfr/My-Solution-for-Design-a-Code-Deployment-System" target="_blank">Codemia</a>；<a href="https://medium.com/@agarwaldevesh.08/system-design-code-deployment-system-hld-8db9763ad833" target="_blank">Medium</a></p>
-<h3>类似 S3 的分布式云存储</h3>
+<h1>类似 S3 的分布式云存储</h1>
 <p>Distributed Cloud Storage like S3（架构型设计）</p>
 <p><a href="https://github.com/Synthia-Li/Synthia-Li.github.io/blob/main/Alex2%209%20S3-like%20Object%20Storage.pdf" target="_blank">Synthia Alex2 Blog</a>；<a href="https://blog.bytebytego.com/p/design-a-s3-like-storage-system" target="_blank">Blog</a>；<a href="https://www.codesmith.io/blog/diagramming-system-design-s3-storage-system" target="_blank">Codesmith</a>；<a href="https://medium.com/@sidharthpurohit/system-designing-basics-designing-a-distributed-storage-service-in-cloud-a91ed91dfb22" target="_blank">Medium</a></p>
-<h3>分布式锁定服务</h3>
+<h1>分布式锁定服务</h1>
 <p>Distributed Locking Service（架构型设计）</p>
 <p><a href="https://www.architecture-weekly.com/p/distributed-locking-a-practical-guide" target="_blank">Architecture-weekly</a>；<a href="https://www.alibabacloud.com/en/knowledge/developer1/design-model-of-distributed-locks?_p_lc=1" target="_blank">Alibabacloud</a>；<a href="https://medium.com/@vaibhavkansagara/distributed-locking-service-d49824fb6e1f" target="_blank">Medium</a>；<a href="https://medium.com/system-design-concepts/distributed-locks-9ed116145a47" target="_blank">Medium</a></p>
-<h3>类似 Slack 的企业通讯工具</h3>
+<h1>类似 Slack 的企业通讯工具</h1>
 <p>Corporate Messenger like Slack（功能型设计）</p>
 <p><a href="https://systemdesign.one/slack-architecture/" target="_blank">Systemdesign</a>；<a href="https://www.linkedin.com/pulse/how-create-corporate-messenger-like-slack-stepan-tanasiychuk-withf/" target="_blank">Linkedin</a>；<a href="https://devtechnosys.com/insights/develop-messaging-apps-like-slack/" target="_blank">Devtechnosys</a>；<a href="https://stfalcon.com/en/blog/post/How-to-Create-a-Corporate-Messenger-like-Slack" target="_blank">Stfalcon</a>；<a href="https://stfalconcom.medium.com/how-to-come-up-with-a-corporate-messenger-like-slack-aebee8650264" target="_blank">Stfalconcom</a>；<a href="https://www.builder.ai/blog/create-team-communication-app-like-slack" target="_blank">Builder</a></p>
-<h3>实时评论系统</h3>
+<h1>实时评论系统</h1>
 <p>Live Comments system（功能型设计）</p>
 <p><a href="https://systemdesign.one/live-comment-system-design/" target="_blank">Systemdesign</a>；<a href="https://www.finalroundai.com/interview-questions/meta-facebook-live-comment-design" target="_blank">Finalroundai</a>；<a href="https://newsletter.systemdesign.one/p/live-comment-system-design" target="_blank">Newsletter</a>；<a href="https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-live-comments" target="_blank">HelloInterview</a></p>
-<h3>广告点击聚合器系统</h3>
+<h1>广告点击聚合器系统</h1>
 <p>Ad Click Aggregator system（优化型设计）</p>
 <p><a href="https://github.com/Synthia-Li/Synthia-Li.github.io/blob/main/Alex2%206%20Ad%20Click%20Event%20Aggregation.pdf" target="_blank">Synthia Alex2 Blog</a>；<a href="https://www.hellointerview.com/learn/system-design/problem-breakdowns/ad-click-aggregator" target="_blank">HelloInterview</a>；<a href="https://evanking1.medium.com/design-an-ad-click-aggregator-53c4da56c264" target="_blank">Evanking1</a>；<a href="https://www.jointaro.com/interview-insights/meta/design-an-ad-click-aggregator/" target="_blank">Jointaro</a>；<a href="https://medium.com/@tahir.rauf/system-design-ad-click-aggregator-df16f0509cde" target="_blank">Medium</a></p>
-<h3>分布式文件系统</h3>
+<h1>分布式文件系统</h1>
 <p>Distributed file system（架构型设计）</p>
 <p><a href="https://medium.com/@eugene-s/google-system-design-question-distributed-file-system-gfs-669cb6772fc1" target="_blank">Medium</a>；<a href="https://juicefs.com/en/blog/engineering/exploring-distributed-file-systems-concepts-design-and-leading-solutions" target="_blank">Juicefs</a>；<a href="https://dl.acm.org/doi/10.1145/3465405" target="_blank">Dl</a>；<a href="https://www.geeksforgeeks.org/design-principles-of-distributed-file-system/" target="_blank">GeeksforGeeks</a></p>
-<h3>类似 YouTube 的 Top K 视频功能系统</h3>
+<h1>类似 YouTube 的 Top K 视频功能系统</h1>
 <p>System similar to YouTube's Top K video function（优化型设计）</p>
 <p><a href="https://www.hellointerview.com/learn/system-design/problem-breakdowns/top-k" target="_blank">HelloInterview</a>；<a href="https://medium.com/@techturtles51/system-design-interview-top-k-heavy-hitters-ab49640f3ec9" target="_blank">Medium</a></p>
-<h3>类似 spotify 的 Top-K 排名系统</h3>
+<h1>类似 spotify 的 Top-K 排名系统</h1>
 <p>Top-K Ranking System like spotify（功能型设计）</p>
 <p><a href="https://medium.com/@ishwarya1011.hidkimath/system-design-top-k-songs-played-on-music-streaming-applications-12d7104834d2" target="_blank">Medium</a>；<a href="https://systemdesignschool.io/problems/topk/solution" target="_blank">SystemDesignSchool</a>；<a href="https://medium.com/@silvestre.bahi_94049/designing-spotify-radios-recommendation-system-machine-learning-system-design-7df492fa1b48" target="_blank">Medium</a>；<a href="https://dev.to/zeeshanali0704/designing-the-spotify-top-k-ef6" target="_blank">Dev</a></p>
-<h3>类似 YouTube 的视频流平台</h3>
+<h1>类似 YouTube 的视频流平台</h1>
 <p>Video Streaming Platform Like YouTube
 Keywords: video upload and storage, CDN distribution, video transcoding, cache optimization, advertising insertion.（功能型设计）</p>
 <p>关键词：视频上传与存储、CDN分发、视频转码、缓存优化、广告插入。</p>
 <p><a href="https://synthia-li.github.io/Alex14%20YouTube.htm" target="_blank">Synthia Blog</a>；<a href="https://www.hellointerview.com/learn/system-design/problem-breakdowns/youtube" target="_blank">HelloInterview</a>；<a href="https://www.jointaro.com/interview-insights/apple/design-a-video-streaming-platform-like-youtube/" target="_blank">Jointaro</a>；<a href="https://www.fastpix.io/tutorials/how-to-build-a-video-sharing-platform-like-youtube" target="_blank">Fastpix</a>；<a href="https://www.geeksforgeeks.org/system-design-of-youtube-a-complete-architecture/" target="_blank">GeeksforGeeks</a></p>
-<h3>广告投放系统</h3>
+<h1>广告投放系统</h1>
 <p>Advertisement Delivery System
 Keywords: bidding algorithm, budget management, user portrait matching, large-scale data processing.（功能型设计）</p>
 <p>关键词：竞价算法、预算管理、用户画像匹配、大规模数据处理。</p>
 <p><a href="https://www.researchgate.net/publication/31229795_Context-aware_Timely_Information_Delivery_in_Mobile_Environments" target="_blank">Researchgate</a>；<a href="https://www.hellointerview.com/learn/system-design/problem-breakdowns/ad-click-aggregator" target="_blank">HelloInterview</a></p>
-<h3>类似 Netfilx 的推荐系统</h3>
+<h1>类似 Netfilx 的推荐系统</h1>
 <p>Recommendation system like Netfilx
 Keywords: user behavior analysis, collaborative filtering, personalized recommendation, real-time data processing.（功能型设计）</p>
 <p>关键词：用户行为分析、协同过滤、个性化推荐、实时数据处理。</p>
 <p><a href="https://medium.com/double-pointer/system-design-interview-recommendation-system-design-as-used-by-youtube-netflix-etc-c457aaec3ab" target="_blank">Medium</a>；<a href="https://medium.com/analytics-vidhya/building-a-netflix-recommendation-system-7b1fec90f83e" target="_blank">Medium</a>；<a href="https://www.pluralsight.com/resources/blog/cloud/how-to-build-a-netflix-style-recommendation-engine-with-amazon-sagemaker" target="_blank">Pluralsight</a></p>
-<h3>打车平台</h3>
+<h1>打车平台</h1>
 <p>Taxi-hailing platform
 Keywords: driver-passenger matching, real-time positioning, dynamic pricing, route planning, data consistency.（功能型设计）</p>
 <p>关键词：司机与乘客匹配、实时定位、动态定价、路由规划、数据一致性。</p>
 <p><a href="https://medium.com/@karan99/system-design-uber-33593137a4fe" target="_blank">Medium</a>；<a href="https://www.fatbit.com/fab/how-to-build-a-ride-hailing-app-like-bolt/" target="_blank">Fatbit</a>；<a href="https://www.linkedin.com/pulse/how-create-ride-hailing-app-like-uber-lovenya-sahni-rgsec/" target="_blank">Linkedin</a>；<a href="https://www.rst.software/blog/how-to-build-an-app-like-uber-in-6-steps-a-complete-guide" target="_blank">Rst</a>；<a href="https://dilipkumar.medium.com/system-design-for-uber-ride-hailing-application-b95ac796c90d" target="_blank">Dilipkumar</a></p>
-<h3>CDN(内容分发网络)</h3>
+<h1>CDN(内容分发网络)</h1>
 <p>CDN (Content Distribution Network)
 Keywords: edge nodes, caching strategy, load balancing, regional routing optimization.（架构型设计）</p>
 <p>关键词：边缘节点、缓存策略、负载均衡、区域路由优化。</p>
 <p><a href="https://www.geeksforgeeks.org/designing-content-delivery-network-cdn-system-design/" target="_blank">GeeksforGeeks</a>；<a href="https://medium.com/@roopa.kushtagi/a-z-of-content-delivery-networks-cdn-making-the-internet-faster-and-more-reliable-57786b46a058" target="_blank">Medium</a>；<a href="https://www.linkedin.com/pulse/designing-content-delivery-network-cdn-cloudastra-technologies-rfk9c/" target="_blank">Linkedin</a></p>
-<h3>问答平台</h3>
+<h1>问答平台</h1>
 <p>Question-and-answer platform
 Keywords: user system, content recommendation, search function, content review, voting ranking.（功能型设计）</p>
 <p>关键词：用户系统、内容推荐、搜索功能、内容审核、投票排序。</p>
 <p><a href="https://medium.com/@yuxuanc1212/inquiry-a-q-a-platform-for-college-students-469899bafe3f" target="_blank">Medium</a>；<a href="https://blog.shams-nahid.com/exploring-the-system-design-of-a-qa-site" target="_blank">Blog</a>；<a href="https://www.cleveroad.com/blog/how-to-build-a-question-and-answer-website-like-quora/" target="_blank">Cleveroad</a></p>
-<h3>社交媒体平台</h3>
+<h1>社交媒体平台</h1>
 <p>Social media platform
 Keywords: user relationships, dynamic distribution, media storage, real-time chat, notification system.（功能型设计）</p>
 <p>关键词：用户关系、动态分发、媒体存储、实时聊天、通知系统。</p>
 <p><a href="https://clockwise.software/blog/how-to-build-a-social-network-website/" target="_blank">Clockwise</a>；<a href="https://mlsdev.com/blog/how-to-build-a-social-network-website-from-scratch" target="_blank">Mlsdev</a>；<a href="https://solveit.dev/blog/how-to-make-a-social-media-app" target="_blank">Solveit</a>；<a href="https://www.geeksforgeeks.org/how-to-design-database-for-social-media-platform/" target="_blank">GeeksforGeeks</a>；<a href="https://bettermode.com/blog/how-to-create-social-media-platform" target="_blank">Bettermode</a></p>
-<h3>监控和警报系统</h3>
+<h1>监控和警报系统</h1>
 <p>Monitoring and Alerting System
 Keywords: data acquisition and storage, alarm system, visualization, time series database（优化型设计）</p>
 <p>关键词：数据采集与存储、告警系统、可视化、时序数据库</p>
 <p><a href="https://github.com/Synthia-Li/Synthia-Li.github.io/blob/main/Alex2%205%20Metrics%20Monitoring%20and%20Alerting%20System.pdf" target="_blank">Synthia Alex2 Blog</a>；<a href="https://medium.com/@tahir.rauf/system-design-metrics-monitoring-alerting-system-844a466e32c5" target="_blank">Medium</a>；<a href="https://medium.com/@guptagoutam2021/how-to-design-a-metrics-monitoring-and-alerting-system-87c02e990dd1" target="_blank">Medium</a>；<a href="https://systemdesignschool.io/problems/realtime-monitoring-system/solution" target="_blank">SystemDesignSchool</a>；<a href="https://dev.to/kliukovkin/system-design-monitoring-and-alerting-system-3nnl" target="_blank">Dev</a>；<a href="https://codemia.io/system-design/design-a-metrics-monitoring-and-alerting-system/solutions/se9b6j/My-Solution-for-Design-a-Metrics-Monitoring-and-Alerting-System?via=vishal" target="_blank">Codemia</a>；<a href="https://blog.bytebytego.com/p/metric-monitoring" target="_blank">Blog</a>；<a href="https://www.statcan.gc.ca/en/data-science/network/monitoring-alerting-system" target="_blank">Statcan</a></p>
-<h3>网约餐平台</h3>
+<h1>网约餐平台</h1>
 <p>Online restaurant booking platform
 keywords: order matching, real-time map, inventory synchronization, and user-merchant linkage.（功能型设计）</p>
 <p>关键词：订单匹配、实时地图、库存同步、用户与商家联动。</p>
 <p><a href="https://www.geeksforgeeks.org/how-to-design-a-database-for-online-restaurant-reservation-and-food-delivery/" target="_blank">GeeksforGeeks</a></p>
-<h3>多人在线游戏服务</h3>
+<h1>多人在线游戏服务</h1>
 <p>Multiplayer online game service. Keywords: real-time, server partitioning, state synchronization, anti-cheating design.（功能型设计）</p>
 <p>关键词：实时性、服务器分区、状态同步、抗作弊设计。</p>
 <p><a href="https://medium.com/@surfd1001/how-to-design-a-multiplayer-online-game-753e21c9918f" target="_blank">Medium</a>；<a href="https://unity.com/how-to/how-build-design-your-multiplayer-game" target="_blank">Unity</a>；<a href="https://www.geeksforgeeks.org/how-to-design-a-database-for-multiplayer-online-games/" target="_blank">GeeksforGeeks</a></p>
-<h3>流媒体音乐服务</h3>
+<h1>流媒体音乐服务</h1>
 <p>Streaming music service
 Keywords: cache, play queue, recommendation system, copyright management, network optimization.（功能型设计）</p>
 <p>关键词：缓存、播放队列、推荐系统、版权管理、网络优化。</p>
 <p><a href="https://medium.com/@ishwarya1011.hidkimath/system-design-music-streaming-services-64df330b5624" target="_blank">Medium</a>；<a href="https://dev.to/koladev/building-a-music-streaming-service-with-python-golang-and-react-from-system-design-to-coding-part-3-52pm" target="_blank">Dev</a>；<a href="https://www.moravio.com/blog/how-to-create-a-music-streaming-app-like-spotify" target="_blank">Moravio</a>；<a href="https://www.muvi.com/blogs/system-design-of-music-streaming-app/" target="_blank">Muvi</a></p>
-<h3>日志聚合系统</h3>
+<h1>日志聚合系统</h1>
 <p>Log aggregation system
 Keywords: log collection, centralized storage, query optimization, real-time analysis, data compression.（功能型设计）</p>
 <p>关键词：日志采集、集中存储、查询优化、实时分析、数据压缩。</p>
 <p><a href="https://www.geeksforgeeks.org/centralized-logging-systems-system-design/" target="_blank">GeeksforGeeks</a>；<a href="https://medium.com/@krrishan7495/distributed-logging-designing-a-robust-system-for-enhanced-monitoring-64ddb0838882" target="_blank">Medium</a>；<a href="https://medium.com/@facuramallo8/logging-aggregation-system-d94f60f92dd0" target="_blank">Medium</a>；<a href="https://dev.to/surajvatsya/system-design-distributed-logging-4hf0" target="_blank">Dev</a></p>
-<h3>社交网络数据结构</h3>
+<h1>社交网络数据结构</h1>
 <p>Data structures for social network（架构型设计）</p>
 <p><a href="https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design/social_graph" target="_blank">GitHub</a>；<a href="https://www.geeksforgeeks.org/design-data-structures-for-a-very-large-social-network-like-facebook-or-linkedln/" target="_blank">GeeksforGeeks</a>；<a href="https://www.geeksforgeeks.org/data-structure-to-design-a-special-social-network/" target="_blank">GeeksforGeeks</a>；<a href="https://www.jointaro.com/interview-insights/google/design-a-data-structure-to-represent-a-social-network-and-its-core-features-efficiently/" target="_blank">Jointaro</a></p>
-<h3>可扩展至 AWS 上数百万用户的系统</h3>
+<h1>可扩展至 AWS 上数百万用户的系统</h1>
 <p>System that scales to millions of users on AWS（功能型设计）</p>
 <p><a href="https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design/scaling_aws" target="_blank">GitHub</a>；<a href="https://www.geeksforgeeks.org/how-to-make-a-scalable-app-for-10-million-users-on-aws/" target="_blank">GeeksforGeeks</a>；<a href="https://bytebytego.com/courses/system-design-interview/scale-from-zero-to-millions-of-users" target="_blank">Bytebytego</a>；<a href="https://aws.amazon.com/cn/blogs/startups/scaling-on-aws-part-4-one-million-users/" target="_blank">Aws</a>；<a href="https://newsletter.systemdesign.one/p/aws-scale" target="_blank">Newsletter</a></p>
-<h3>亚马逊的按类别销售排名功能</h3>
+<h1>亚马逊的按类别销售排名功能</h1>
 <p>Amazon's sales rank by category feature（功能型设计）</p>
 <p><a href="https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design/sales_rank" target="_blank">GitHub</a>；<a href="https://www.linkedin.com/pulse/building-sales-rank-category-feature-using-aws-filip-konkowski-isxpe/" target="_blank">Linkedin</a>；<a href="https://interviewing.io/mocks/amazon-system-design-amazon-ranking-system" target="_blank">Interviewing</a>；<a href="https://tomoharutsutsumi.medium.com/tried-a-design-problem-of-amazons-sales-rank-by-category-feature-f1f833f646c7" target="_blank">Tomoharutsutsumi</a></p>
-<h3>键值缓存来保存最近的 Web 服务器查询的结果</h3>
+<h1>键值缓存来保存最近的 Web 服务器查询的结果</h1>
 <p>Key-value cache to save the results of the most recent web server queries（架构型设计）</p>
 <p><a href="https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design/query_cache" target="_blank">GitHub</a>；<a href="https://www.geeksforgeeks.org/caching-system-design-concept-for-beginners/" target="_blank">GeeksforGeeks</a>；<a href="https://medium.com/@abhishekranjandev/caching-in-system-design-an-in-depth-exploration-b51e2c2e4dbd" target="_blank">Medium</a>；<a href="https://imgur.com/share-this-how-to-design-key-value-cache-to-save-results-of-most-recent-web-server-queries-gif-explore-more-on-ask-m0O3Thc" target="_blank">Imgur</a></p>
-<h3>薄荷</h3>
+<h1>薄荷</h1>
 <p>Mint.com（功能型设计）</p>
 <p><a href="https://liuzhenglaichn.gitbook.io/system-design/mint/design-mint" target="_blank">Liuzhenglaichn</a>；<a href="https://gitee.com/clann/system-design-primer/blob/master/solutions/system_design/mint/README.md?skip_mobile=true" target="_blank">Gitee</a>；<a href="https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design/mint" target="_blank">GitHub</a></p>
-<h3>邻近服务</h3>
+<h1>邻近服务</h1>
 <p>Proximity Service</p>
 <p><a href="https://github.com/Synthia-Li/Synthia-Li.github.io/blob/main/Alex2%201%20Proximity%20Service.pdf" target="_blank">GitHub</a>；<a href="https://blog.bytebytego.com/p/proximity-service" target="_blank">ByteByteGo</a>；<a href="https://medium.com/@girishlalwani2010/some-insights-on-proximity-service-system-design-part-1-816f25670ecf" target="_blank">Medium</a>；<a href="https://abhishek-saini.medium.com/design-proximity-service-5944155f5a86" target="_blank">Medium</a></p>
-<h3>分布式电子邮件服务</h3>
+<h1>分布式电子邮件服务</h1>
 <p>Distributed Email Service</p>
 <p><a href="https://github.com/Synthia-Li/Synthia-Li.github.io/blob/main/Alex2%208%20Distributed%20Email%20Service.pdf" target="_blank">GitHub</a>；<a href="https://books.dwf.dev/docs/system-design/c24" target="_blank">DWF Docs</a>；<a href="https://medium.com/@interviewready/high-level-design-for-gmail-f9c5e42be2e9" target="_blank">Medium</a>；<a href="https://balramchavan.medium.com/system-design-interview-question-design-mass-email-sending-system-079e6be93945" target="_blank">Medium</a>；<a href="https://blog.bytebytego.com/p/design-gmail" target="_blank">ByteByteGo</a>；<a href="https://www.jointaro.com/interview-insights/apple/how-would-you-design-a-distributed-mail-system/" target="_blank">Jointaro</a></p>
 
